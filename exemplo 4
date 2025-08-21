@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+            background-color: rgba(92,92,219);
+            margin: 0;
+        }
+
+        .conteiner {
+            display: flex;
+            gap: 5px;
+            width: 80%;
+            max-width: 900px;
+        }
+
+        .card {
+            position: relative;
+            flex: 1;
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: flex 0.4s ease;
+        }
+
+        .card:hover {
+            flex: 3; /* expande */
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.1); /* zoom suave */
+        }
+
+        /* Texto que aparece no hover */
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+
+        .card:hover .overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="conteiner">
+        <div class="card">
+            <img src="html.png" alt="HTML">
+            <div class="overlay">HTML</div>
+        </div>
+        <div class="card">
+            <img src="css.png" alt="CSS">
+            <div class="overlay">CSS</div>
+        </div>
+        <div class="card">
+            <img src="js.png" alt="JavaScript">
+            <div class="overlay">JavaScript</div>
+        </div>
+        <div class="card">
+            <img src="react.png" alt="React">
+            <div class="overlay">React</div>
+        </div>
+        <div class="card">
+            <img src="python.png" alt="Python">
+            <div class="overlay">Python</div>
+        </div>
+    </div>
+</body>
+</html>
